@@ -87,7 +87,7 @@ export function loadComments() {
     }).then((comments) => {
       return dispatch(commentsLoaded(comments));
     });
-  }
+  }y
 }
 
 //Action to handle the completion of the Comments AJAX call
