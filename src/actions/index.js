@@ -101,16 +101,68 @@ export function commentsLoaded(comments) {
 
 //Action to Create a Product
 
-// function createProduct() {
-//   return function(dispatch) {
-//     fetch("/products", {
-//       method: "POST",
-//     }
-//   }
-// }
+export function createProduct(product) {
+  return function(dispatch) {
+    fetch("/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(product)
+    })
+    .then((response) => {
+      dispatch(loadProducts());
+    });
+  };
+}
 
 //Action to Create a Contact
 
+export function createContact(contact) {
+  return function(dispatch) {
+    fetch("/contacts", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(contact)
+    })
+    .then((response) => {
+      dispatch(loadContacts());
+    });
+  };
+}
+
 //Action to Create a Vehicles
 
+export function createVehicle(vehicle) {
+  return function(dispatch) {
+    fetch("/vehicles", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(vehicle)
+    })
+    .then((response) => {
+      dispatch(loadVehicles);
+    });
+  };
+}
+
 //Action to Create a Comment
+
+export function createComment(comment) {
+  return function(dispatch) {
+    fetch("/comments", {
+      type: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(comment)
+    })
+    .then((response) => {
+      dispatch(loadComments())
+    });
+  };
+}
