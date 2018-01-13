@@ -87,7 +87,7 @@ export function loadComments() {
     }).then((comments) => {
       return dispatch(commentsLoaded(comments));
     });
-  }y
+  }
 }
 
 //Action to handle the completion of the Comments AJAX call
@@ -98,3 +98,19 @@ export function commentsLoaded(comments) {
     value: comments
   }
 }
+
+//Action to Create a Product
+
+// function createProduct() {
+//   return function(dispatch) {
+//     fetch("/products", {
+//       method: "POST",
+//     }
+//   }
+// }
+
+//Action to Create a Contact
+
+//Action to Create a Vehicles
+
+//Action to Create a Comment
