@@ -106,7 +106,7 @@ export function createProduct(product) {
     fetch("/products", {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(product)
     })
@@ -123,7 +123,7 @@ export function createContact(contact) {
     fetch("/contacts", {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(contact)
     })
@@ -140,12 +140,12 @@ export function createVehicle(vehicle) {
     fetch("/vehicles", {
       method: "POST",
       headers: {
-        "content-type": "application/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(vehicle)
     })
     .then((response) => {
-      dispatch(loadVehicles);
+      dispatch(loadVehicles());
     });
   };
 }
@@ -155,14 +155,14 @@ export function createVehicle(vehicle) {
 export function createComment(comment) {
   return function(dispatch) {
     fetch("/comments", {
-      type: "POST",
+      method: "POST",
       headers: {
-        "content-type": "application/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(comment)
     })
     .then((response) => {
-      dispatch(loadComments())
+      dispatch(loadComments());
     });
   };
 }
